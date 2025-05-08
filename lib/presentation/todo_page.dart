@@ -129,6 +129,10 @@ class TodoPage extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(height: 4.0),
+                                Text(
+                                  '${todo.date.day}/${todo.date.month}/${todo.date.year}',
+                                  style: TextStyle(color: Colors.grey),
+                                ),
                               ],
                             ),
                           ),
