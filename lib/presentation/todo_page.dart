@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/bloc/todo_bloc.dart';
+import 'package:todo_app/model/todo.dart';
 
 class TodoPage extends StatelessWidget {
   const TodoPage({super.key});
@@ -98,7 +99,19 @@ class TodoPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 16.0),
-              Expanded(child: )
+              Expanded(
+                child: BlocBuilder<TodoBloc, TodoState>(
+                  builder: (context, state) {
+                    if (state is TodoLoading) {
+                      return Center(child: CircularProgressIndicator());
+                    } else if (state is TodoLoaded) {
+                      if (state.todos.isEmpty) {
+                        return Center(child: Text('Todo list is empty'));
+                      }
+                    }
+                  },
+                ),
+              ),
             ],
           ),
         ),
