@@ -5,6 +5,15 @@ class TodoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    final _key = GlobalKey<FormState>();
+    final _controller = TextEditingController();
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(),
+          ),
+        ),
+    );
   }
 }
